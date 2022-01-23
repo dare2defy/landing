@@ -4,4 +4,14 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 
-createApp(App).use(store).use(router).mount('#app')
+import UiContainer from '@/components/ui/Container.vue'
+import UiButton from '@/components/ui/Button.vue'
+import UiIcon from '@/components/ui/Icon.vue'
+
+const app = createApp(App)
+
+app.component('UiContainer', UiContainer)
+app.component('UiButton', UiButton)
+app.component('UiIcon', UiIcon)
+
+app.use(store).use(router).mount('#app')
