@@ -5,7 +5,7 @@
         <ProjectLogo />
       </div>
       <div class="header-right">
-        <ui-button to="/" type="primary">
+        <ui-button to="/" type="primary" size="big">
           Button
         </ui-button>
       </div>
@@ -23,9 +23,15 @@ import ProjectLogo from '@/components/ProjectLogo.vue'
 export default class TheHeader extends Vue {}
 </script>
 
+<style lang="scss">
+:root {
+  --header-size: 80px;
+}
+</style>
+
 <style lang="scss" scoped>
 .header {
-  flex: 0 0 80px;
+  flex: 0 0 var(--header-size);
   box-sizing: border-box;
   position: relative;
   z-index: 100;
@@ -47,6 +53,9 @@ export default class TheHeader extends Vue {}
     align-items: center;
   }
 
-  //--button-background: #f00;
+  @media (max-width: 600px) {
+    --logo-size: calc(100vw / 15);
+    --button-size: 30px;
+  }
 }
 </style>

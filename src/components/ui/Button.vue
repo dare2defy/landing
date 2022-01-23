@@ -11,13 +11,12 @@
 </template>
 
 <script lang="ts">
-import { ref, reactive } from 'vue'
-
 export default {
   props: {
-    type: { type: String, required: true },
-    to: { type: String, required: true },
-    href: { type: String, required: true }
+    size: { type: String, default: undefined },
+    type: { type: String, default: undefined },
+    href: { type: String, default: undefined },
+    to: { type: String, default: undefined }
   },
 
   setup (props: any) {
@@ -32,7 +31,8 @@ export default {
 
     const classes = [
       'ui-button',
-      `ui-button--${props.type}`
+      props.type ? `ui-button--${props.type}` : undefined,
+      props.size ? `ui-button--${props.size}` : undefined
     ]
 
     return {
@@ -49,12 +49,20 @@ export default {
 
 .ui-button {
   $types: 'primary', 'success', 'warning', 'danger', 'info';
+  $sizes: (
+    'tiny':    16px,
+    'small':   24px,
+    'medium':  32px,
+    'big':     48px,
+    'large':   64px,
+  );
 
   --ui-button-size: var(--button-size, 32px);
   --ui-button-width: var(--button-width);
   --ui-button-padding: var(--button-padding, var(--gap));
   --ui-button-radius: var(--button-radius, 4px);
   --ui-button-background: var(--button-background, rgba(255,255,255, 0.1));
+  --ui-button-shadow: transparent;
 
   &:hover {
     --ui-button-background: var(--button-background, rgba(255,255,255, 0.2));
@@ -70,12 +78,17 @@ export default {
 
       &:active, &:focus {
         --ui-button-background: var(--button-background-active, var(--#{$type}-active));
+        --ui-button-shadow: var(--button-shadow, var(--#{$type}-shadow));
       }
     }
   }
 
-  &--primary {
-    --ui-button-background: var(--button-background, var(--primary));
+  @each $size, $value in $sizes {
+    &--#{$size} {
+      --ui-button-size: var(--button-size, #{$value});
+      --ui-button-padding: var(--button-padding, calc(var(--ui-button-size) / 1.5));
+      --ui-button-radius: var(--button-radius, calc(var(--ui-button-size) / 10));
+    }
   }
 
   @extend %resetButton;
@@ -88,9 +101,11 @@ export default {
   padding: 0 var(--ui-button-padding);
   border-radius: var(--ui-button-radius);
   background: var(--ui-button-background);
+  transition: background 0.25s, outline 0.25s;
 
   &:focus {
-    box-shadow: 0 0 0 1px transparent, 0 0 0 2px var(--ui-button-background);
+    outline: 2px solid var(--ui-button-shadow);
+    outline-offset: 1px;
   }
 }
 </style>

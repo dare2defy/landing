@@ -82,24 +82,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  flex: 0 0 250px;
-  position: relative;
+footer {
+  padding: var(--gap) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: var(--gap-double);
 }
 
 ul {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--gap);
+  margin: 0;
+  padding: 0;
   list-style: none;
+  white-space: nowrap;
 }
 
 a {
+  display: flex;
   text-decoration: none;
 
   &:hover {

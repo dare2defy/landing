@@ -1,5 +1,5 @@
 $colors: (
-  'primary': #ea6b26,
+  'primary': #d423a1,
   'success': #59ab36,
   'warning': #ea6b26,
   'danger': #ff5524,
@@ -12,6 +12,7 @@ $colors: (
     --#{$color}: #{$value};
     --#{$color}-hover: #{lighten($value, 10%)};
     --#{$color}-active: #{darken($value, 10%)};
+    --#{$color}-shadow: #{rgba($value, 0.2)};
   }
   --backgroud: #283659;
   --light: #fff;

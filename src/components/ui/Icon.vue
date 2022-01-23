@@ -22,6 +22,8 @@ export default {
 
 <style lang="scss">
 .ui-icon {
+  display: inline-flex;
+
   svg {
     width: 1em;
     height: 1em;

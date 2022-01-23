@@ -12,12 +12,15 @@ export default class ProjectLogo extends Vue {}
 
 <style lang="scss" scoped>
 .logo {
+  --size: var(--logo-size, 40px);
+
   position: relative;
-  font-size: 40px;
+  color: var(--light);
+  font-size: var(--size);
   font-weight: 900;
   font-family: 'Orbitron', sans-serif;
   line-height: 1;
-  color: var(--light);
+  letter-spacing: calc(var(--size) / 20);
   text-decoration: none;
 }
 </style>
