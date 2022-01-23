@@ -6,7 +6,7 @@
       </div>
       <div class="header-right">
         <ui-button to="/" type="primary" size="big">
-          Button
+          Launch App
         </ui-button>
       </div>
     </ui-container>
