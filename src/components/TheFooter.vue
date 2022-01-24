@@ -63,12 +63,16 @@ export default {
         link: '#discord'
       },
       {
-        icon: 'github',
-        link: '#github'
-      },
-      {
         icon: 'twitter',
         link: '#twitter'
+      },
+      {
+        icon: 'telegram',
+        link: '#telegram'
+      },
+      {
+        icon: 'github',
+        link: '#github'
       }
     ]
 

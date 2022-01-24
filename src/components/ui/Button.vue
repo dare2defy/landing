@@ -62,6 +62,7 @@ export default {
   --ui-button-padding: var(--button-padding, var(--gap));
   --ui-button-radius: var(--button-radius, 4px);
   --ui-button-background: var(--button-background, rgba(255,255,255, 0.1));
+  --ui-button-color: var(--button-color, var(--light));
   --ui-button-shadow: transparent;
 
   &:hover {
@@ -101,6 +102,7 @@ export default {
   padding: 0 var(--ui-button-padding);
   border-radius: var(--ui-button-radius);
   background: var(--ui-button-background);
+  color: var(--ui-button-color);
   transition: background 0.25s, outline 0.25s;
 
   &:focus {
