@@ -19,7 +19,7 @@ git commit -m 'deploy'
 # если вы публикуете по адресу https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-# если вы публикуете по адресу https://<USERNAME>.github.io/<REPO>
+# если вы публикуете по адресу https://dare2defy.github.io/landing
 # git push -f git@github.com:dare2defy/landing.git master:gh-pages
 
 cd -
