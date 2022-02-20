@@ -13,14 +13,21 @@
             Trade
           </ui-button>
         </footer>
+        <Subscription />
       </div>
     </ui-container>
   </section>
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-class-component'
+import Subscription from '@/components/Subscription.vue'
 
+@Options({
+  components: {
+    Subscription
+  }
+})
 export default class Hero extends Vue {}
 </script>
 
